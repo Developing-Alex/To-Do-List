@@ -1,3 +1,51 @@
+@font-face {
+  font-family: 'Noto-Sans';
+  src: url('./assets/fonts/NotoSans-Regular.ttf') format('truetype'),
+  url('./assets/fonts/NotoSans-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  background-color: whitesmoke;
+  margin: 0;
+}
+
+/*All things related to the header*/
+
+header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  background-color: rgb(120, 129, 35);
+}
+
+#logo {
+  color: whitesmoke;
+  font-family: 'Noto-Sans';
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
 #hello {
-  color: red;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-self: center;
+}
+
+#sign-out-btn {
+  background-color: whitesmoke;
+  width: 125px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  justify-self: center;
 }
