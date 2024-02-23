@@ -11,17 +11,22 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: whitesmoke;
   margin: 0;
+  height: 100vh;
 }
 
 /*All things related to the header*/
 
 header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(120, 129, 35);
+  padding: 10px;
+  margin: 0;
 }
 
 #logo {
@@ -30,6 +35,12 @@ header {
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0;
+}
+
+#user-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 #hello {
@@ -48,4 +59,29 @@ header {
   border-radius: 25px;
   border: none;
   justify-self: center;
+}
+
+#content-container {
+  display: flex;
+  grid-template-areas: 
+  'sidebar content'
+  ;
+  width: 100vw;
+  height: 100vh;
+}
+
+#content {
+  width: 100vw;
+  grid-area: 'content';
+  background-image: url('./assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  grid-area: 'sidebar';
+  background-color: whitesmoke;
 }
