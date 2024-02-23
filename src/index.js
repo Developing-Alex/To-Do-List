@@ -1,4 +1,12 @@
 import './style.css';
-import {loadHeader} from './home';
+import { loadHeader, loadContentContainer } from './home';
 
-document.body.appendChild(loadHeader())
+const header = loadHeader('Alex');
+
+const contentContainer = loadContentContainer();
+
+const bodyArr = [header, contentContainer];
+
+bodyArr.forEach(e => document.body.appendChild(e));
+
+
