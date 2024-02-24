@@ -1,11 +1,20 @@
 import './style.css';
+import  PencilIcon from './assets/images/pencil-outline.svg';
+import DayIcon from './assets/images/calendar-today.svg';
+import WeekIcon from './assets/images/calendar-week.svg';
+import AllIcon from './assets/images/text-box-multiple-outline.svg';
 
-function loadHeader(userName){
+function loadHeader(userName) {
   const header = document.createElement('header');
+
+  const pencilIcon = new Image();
+  pencilIcon.src = PencilIcon;
+  pencilIcon.id = 'pencil-icon';
 
   const logo = document.createElement('h1');
   logo.id = 'logo';
-  logo.textContent = 'B4.i';
+  logo.textContent = 'Pencil It In';
+  logo.prepend(pencilIcon);
 
   const userContainer = document.createElement('div');
   userContainer.id = 'user-container';
@@ -28,21 +37,69 @@ function loadHeader(userName){
 }
 
 
-function loadSidebar(){
+function loadSidebar() {
   const sidebar = document.createElement('div');
   sidebar.id = 'sidebar';
+
+  function createTimeContainer() {
+    const timeContainer = document.createElement('div');
+    timeContainer.id = 'time-container';
+
+    const dayIcon = new Image();
+    dayIcon.src = DayIcon;
+    dayIcon.id = 'day-icon';
+    dayIcon.className = 'time-icons';
+
+    const dayBtn = document.createElement('button');
+    dayBtn.id = 'day-btn';
+    dayBtn.textContent = "Today's Tasks";
+    dayBtn.prepend(dayIcon);
+
+    const weekIcon = new Image();
+    weekIcon.src = WeekIcon;
+    weekIcon.id = 'week-icon';
+    weekIcon.className = 'time-icons';
+
+    const weekBtn = document.createElement('button');
+    weekBtn.id = 'week-btn';
+    weekBtn.textContent = 'My weekly tasks';
+    weekBtn.prepend(weekIcon);
+
+    const allIcon = new Image();
+    allIcon.src = AllIcon;
+    allIcon.id = 'all-icon';
+    allIcon.className = 'time-icons';
+
+    const allBtn = document.createElement('button');
+    allBtn.id = 'all-btn';
+    allBtn.textContent = 'All my tasks';
+    allBtn.prepend(allIcon);
+
+    const timeButtons = [dayBtn, weekBtn, allBtn];
+
+    timeButtons.forEach(btn => {
+      timeContainer.appendChild(btn);
+      btn.className = 'time-btn'
+    });
+
+    return timeContainer
+  }
+
+  const timeContainer = createTimeContainer();
+
+  sidebar.appendChild(timeContainer)
 
   return sidebar;
 }
 
-function loadContent(){
+function loadContent() {
   const content = document.createElement('div');
   content.id = 'content';
 
   return content;
 }
 
-function loadContentContainer(){
+function loadContentContainer() {
   const contentContainer = document.createElement('div');
   contentContainer.id = 'content-container';
 
@@ -55,4 +112,4 @@ function loadContentContainer(){
   return contentContainer;
 }
 
-export { loadHeader, loadContentContainer};
+export { loadHeader, loadContentContainer };
