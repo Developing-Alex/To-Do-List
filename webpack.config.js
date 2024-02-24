@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'B4.i',
+      title: 'Pencil It In',
     }),
   ],
   output: {
