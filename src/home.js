@@ -1,8 +1,9 @@
 import './style.css';
-import  PencilIcon from './assets/images/pencil-outline.svg';
+import PencilIcon from './assets/images/pencil-outline.svg';
 import DayIcon from './assets/images/calendar-today.svg';
 import WeekIcon from './assets/images/calendar-week.svg';
 import AllIcon from './assets/images/text-box-multiple-outline.svg';
+import AddIcon from './assets/images/plus-circle-outline.svg';
 
 function loadHeader(userName) {
   const header = document.createElement('header');
@@ -10,6 +11,7 @@ function loadHeader(userName) {
   const pencilIcon = new Image();
   pencilIcon.src = PencilIcon;
   pencilIcon.id = 'pencil-icon';
+  pencilIcon.attributeStyleMap
 
   const logo = document.createElement('h1');
   logo.id = 'logo';
@@ -95,6 +97,38 @@ function loadSidebar() {
 function loadContent() {
   const content = document.createElement('div');
   content.id = 'content';
+
+  function createDayTasks() {
+    const taskContainer = document.createElement('div');
+    taskContainer.id = 'task-container';
+
+    const dailyTaskHeader = document.createElement('h2');
+    dailyTaskHeader.id = 'daily-task-header';
+    dailyTaskHeader.textContent = "Today's Tasks";
+
+    const addTaskContainer = document.createElement('div');
+    addTaskContainer.id = 'add-task-container';
+
+    const addTaskBtn = new Image();
+    addTaskBtn.src = AddIcon;
+    addTaskBtn.id = 'add-task-btn';
+    addTaskBtn.className = 'add-task';
+
+    const addTaskParagraph = document.createElement('p');
+    addTaskParagraph.id = 'add-task-paragraph';
+    addTaskParagraph.textContent = 'Add Task';
+    addTaskParagraph.className = 'add-task';
+    addTaskParagraph.prepend(addTaskBtn);
+
+    addTaskContainer.appendChild(addTaskParagraph)
+
+    const taskContainerArr = [dailyTaskHeader, addTaskContainer];
+    taskContainerArr.forEach(e => taskContainer.appendChild(e));
+
+    return taskContainer;
+  }
+
+  content.appendChild(createDayTasks());
 
   return content;
 }
