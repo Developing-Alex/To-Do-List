@@ -35,6 +35,13 @@ header {
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+#pencil-icon {
+  width: 50px;
+  filter: invert(95%);
 }
 
 #user-container {
@@ -63,16 +70,12 @@ header {
 
 #content-container {
   display: flex;
-  grid-template-areas: 
-  'sidebar content'
-  ;
   width: 100vw;
   height: 100vh;
 }
 
 #content {
   width: 100vw;
-  grid-area: 'content';
   background-image: url('./assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
   background-position: center;
   background-size: cover;
@@ -80,8 +83,41 @@ header {
 }
 
 #sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
   min-width: 250px;
   max-width: 250px;
-  grid-area: 'sidebar';
   background-color: whitesmoke;
+}
+
+#time-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-btn {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: rgba(0, 0, 0, 0.75);
+  background-color: whitesmoke;
+  font-family: 'Noto-Sans';
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.time-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: .7s;
+}
+
+.time-icons {
+  width: 25px;
+  filter: invert(25%);
 }
