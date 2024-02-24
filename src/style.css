@@ -25,7 +25,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(120, 129, 35);
-  padding: 10px;
+  padding: 20px;
   margin: 0;
 }
 
@@ -36,11 +36,11 @@ header {
   font-weight: bold;
   margin: 0;
   display: flex;
-  gap: 15px;
+  gap: 5px;
 }
 
 #pencil-icon {
-  width: 50px;
+  width: 2.5rem;
   filter: invert(95%);
 }
 
@@ -68,6 +68,8 @@ header {
   justify-self: center;
 }
 
+/*Content Container Styles*/
+
 #content-container {
   display: flex;
   width: 100vw;
@@ -76,11 +78,60 @@ header {
 
 #content {
   width: 100vw;
+  display: flex;
   background-image: url('./assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 50px;
 }
+
+#task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#daily-task-header {
+  margin: 0;
+  padding: 10px 0 10px 0;
+  font-family: 'Noto-Sans';
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#add-task-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+}
+
+#add-task-btn {
+  width: 1.3rem;
+}
+
+#add-task-paragraph {
+  display: flex;
+  gap: 5px;
+  font-size: 1.3rem;
+  margin: 0;
+  font-family: 'Noto-Sans';
+  filter: invert(30%);
+  cursor: pointer;
+}
+
+#add-task-paragraph:hover {
+  filter: invert(0%);
+}
+
+#add-task-paragraph:active {
+  filter: invert(30%);
+}
+
+
+
+/*Sidebar Styles*/
 
 #sidebar {
   display: flex;
@@ -104,8 +155,7 @@ header {
   color: rgba(0, 0, 0, 0.75);
   background-color: whitesmoke;
   font-family: 'Noto-Sans';
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,9 +165,10 @@ header {
 .time-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transition: .7s;
+  color: black;
 }
 
 .time-icons {
-  width: 25px;
+  width: 1.2rem;
   filter: invert(25%);
 }
