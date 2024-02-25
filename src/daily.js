@@ -1,12 +1,12 @@
 import './style.css';
 
-export default function ShowAllTasks(){
+export default function ShowDailyTasks(){
   const dailyTaskContainer = document.getElementById('daily-task-container');
-  dailyTaskContainer.style.display = 'none';
+  dailyTaskContainer.style.display = 'flex';
 
   const weeklyTaskContainer = document.getElementById('weekly-task-container');
   weeklyTaskContainer.style.display = 'none';
 
   const allTasksContainer = document.getElementById('all-task-container');
-  allTasksContainer.style.display = 'flex';
+  allTasksContainer.style.display = 'none';
 }
