@@ -29,13 +29,16 @@ header {
   margin: 0;
 }
 
+#logo-container {
+  display: flex;
+}
+
 #logo {
   color: whitesmoke;
   font-family: 'Noto-Sans';
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0;
-  display: flex;
   gap: 5px;
 }
 
@@ -86,7 +89,7 @@ header {
   padding: 50px;
 }
 
-#task-container {
+#daily-task-container {
   display: flex;
   flex-direction: column;
   gap: 15px;

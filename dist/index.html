@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pencil It In</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="main.js"></script></head>
-  <body>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pencil It In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="logo-container">
+      <img src="/src/assets/images/pencil-outline.svg" alt="Pencil Outline" id="pencil-icon">
+      <h1 id="logo">Pencil It In</h1>
+    </div>
+    <div id="user-container">
+      <p id="hello"></p>
+      <button id="sign-out-btn">Sign Out</button>
+    </div>
+  </header>
+  <div id="content-container">
+    <div id="sidebar">
+      <div id="time-container">
+        <button id="day-btn" class="time-btn"><img src="/src/assets/images/calendar-today.svg" alt="Day on calendar" class="time-icons" id="day-icon">Today's Tasks</button>
+        <button id="week-btn" class="time-btn"><img src="/src/assets/images/calendar-week.svg" alt="Week on calendar" class="time-icons" id="week-icon">Weekly Tasks</button>
+        <button id="all-btn" class="time-btn"><img src="/src/assets/images/text-box-multiple-outline.svg" alt="Multiple task icon" class="time-icons" id="all-icon">All My Tasks</button>
+      </div>
+    </div>
+    <div id="content">
+      <div id="daily-task-container">
+        <h2 id="daily-task-header">Today's Tasks</h2>
+        <div id="add-task-container">
+          <p id="add-task-paragraph" class="add-task"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button" id="add-task-btn" class="add-task">Add Task</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
