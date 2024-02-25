@@ -89,13 +89,21 @@ header {
   padding: 50px;
 }
 
-#daily-task-container {
+#all-task-container {
   display: flex;
+}
+
+#weekly-task-container {
+  display: none;
+}
+
+#daily-task-container {
+  display: none;
   flex-direction: column;
   gap: 15px;
 }
 
-#daily-task-header {
+.task-headers {
   margin: 0;
   padding: 10px 0 10px 0;
   font-family: 'Noto-Sans';
@@ -132,6 +140,9 @@ header {
   filter: invert(30%);
 }
 
+#all-task-container {
+  display: flex;
+}
 
 
 /*Sidebar Styles*/
