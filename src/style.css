@@ -33,6 +33,11 @@ header {
   display: flex;
 }
 
+#pencil-icon {
+  width: 2.5rem;
+  filter: invert(95%);
+}
+
 #logo {
   color: whitesmoke;
   font-family: 'Noto-Sans';
@@ -40,11 +45,6 @@ header {
   font-weight: bold;
   margin: 0;
   gap: 5px;
-}
-
-#pencil-icon {
-  width: 2.5rem;
-  filter: invert(95%);
 }
 
 #user-container {
@@ -89,6 +89,11 @@ header {
   padding: 50px;
 }
 
+.task-containers {
+  gap: 15px;
+  flex-direction: column;
+}
+
 #all-task-container {
   display: flex;
 }
@@ -99,8 +104,6 @@ header {
 
 #daily-task-container {
   display: none;
-  flex-direction: column;
-  gap: 15px;
 }
 
 .task-headers {
@@ -111,18 +114,14 @@ header {
   color: rgba(0, 0, 0, 0.8);
 }
 
-#add-task-container {
+.add-task-container {
   display: flex;
   margin: 0;
   padding: 0;
   gap: 5px;
 }
 
-#add-task-btn {
-  width: 1.3rem;
-}
-
-#add-task-paragraph {
+.add-task-paragraph {
   display: flex;
   gap: 5px;
   font-size: 1.3rem;
@@ -132,18 +131,17 @@ header {
   cursor: pointer;
 }
 
-#add-task-paragraph:hover {
+.add-task-paragraph:hover {
   filter: invert(0%);
 }
 
-#add-task-paragraph:active {
+.add-task-paragraph:active {
   filter: invert(30%);
 }
 
-#all-task-container {
-  display: flex;
+.add-task-btn {
+  width: 1.3rem;
 }
-
 
 /*Sidebar Styles*/
 
