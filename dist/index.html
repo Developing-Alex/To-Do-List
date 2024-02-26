@@ -22,28 +22,57 @@
   <div id="content-container">
     <div id="sidebar">
       <div id="time-container">
-        <button id="day-btn" class="time-btn"><img src="/src/assets/images/calendar-today.svg" alt="Day on calendar" class="time-icons" id="day-icon">Today's Tasks</button>
-        <button id="week-btn" class="time-btn"><img src="/src/assets/images/calendar-week.svg" alt="Week on calendar" class="time-icons" id="week-icon">Weekly Tasks</button>
-        <button id="all-btn" class="time-btn"><img src="/src/assets/images/text-box-multiple-outline.svg" alt="Multiple task icon" class="time-icons" id="all-icon">All My Tasks</button>
+        <button id="day-btn" class="time-btn"><img src="/src/assets/images/calendar-today.svg" alt="Day on calendar"
+            class="time-icons" id="day-icon">Today's Tasks</button>
+        <button id="week-btn" class="time-btn"><img src="/src/assets/images/calendar-week.svg" alt="Week on calendar"
+            class="time-icons" id="week-icon">Weekly Tasks</button>
+        <button id="all-btn" class="time-btn"><img src="/src/assets/images/text-box-multiple-outline.svg"
+            alt="Multiple task icon" class="time-icons" id="all-icon">All My Tasks</button>
       </div>
     </div>
     <div id="content">
       <div id="daily-task-container" class="task-containers">
         <h2 id="daily-task-header" class="task-headers">Today's Tasks</h2>
         <div class="add-task-container">
-          <p class="add-task-paragraph"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button" class="add-task-btn">Add Task</p>
+          <p class="add-task-paragraph"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button"
+              class="add-task-btn">Add Task</p>
         </div>
       </div>
       <div id="all-task-container" class="task-containers">
         <h2 id="all-tasks-header" class="task-headers">All My Tasks</h2>
         <div class="add-task-container">
-          <p class="add-task-paragraph"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button" class="add-task-btn">Add Task</p>
+          <p class="add-task-paragraph"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button"
+              class="add-task-btn">Add Task</p>
+          <form action="" method="post" id="add-task-form-container">
+            <div id="form-box">
+              <textarea name="form-title" id="form-title" cols="30" rows="1" placeholder="Title"></textarea>
+              <textarea name="form-description" id="form-description" cols="30" rows="3"
+                placeholder="Description"></textarea>
+              <h4 id="priority-header">Priority</h4>
+              <div id="priority-container">
+                <li class="priorities">
+                  <input type="radio" name="priority" id="high" class="priority-radio" value="high">
+                  <label for="high">High</label>
+                </li>
+                <li class="priorities">
+                  <input type="radio" name="priority" id="medium" class="priority-radio" value="medium">
+                  <label for="medium">Medium</label>
+                </li>
+                <li class="priorities">
+                  <input type="radio" name="priority" id="low" class="priority-radio" value="low">
+                  <label for="low">Low</label>
+                </li>
+              </div>
+              <button id="due-date">Due Date</button>
+            </div>
+          </form>
         </div>
       </div>
       <div id="weekly-task-container" class="task-containers">
         <h2 id="weekly-tasks-header" class="task-headers">Weekly Tasks</h2>
         <div class="add-task-container">
-          <p class="add-task-paragraph"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button" class="add-task-btn">Add Task</p>
+          <p class="add-task-paragraph"><img src="/src/assets/images/plus-circle-outline.svg" alt="Plus button"
+              class="add-task-btn">Add Task</p>
         </div>
       </div>
     </div>
