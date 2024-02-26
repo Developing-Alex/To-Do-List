@@ -90,12 +90,14 @@ header {
 }
 
 .task-containers {
-  gap: 15px;
+  display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 #all-task-container {
   display: flex;
+  flex-direction: column;
 }
 
 #weekly-task-container {
@@ -116,9 +118,10 @@ header {
 
 .add-task-container {
   display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
-  gap: 5px;
+  gap: 15px;
 }
 
 .add-task-paragraph {
@@ -141,6 +144,62 @@ header {
 
 .add-task-btn {
   width: 1.3rem;
+}
+
+/*Form Styles*/
+
+#form-box {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 5px;
+}
+
+#form-title {
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: whitesmoke;
+}
+
+#form-description {
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: whitesmoke;
+}
+
+#priority-header {
+  text-align: center;
+  font-family: 'Noto-Sans';
+  margin: 0;
+}
+
+#priority-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priorities {
+  list-style: none;
+  font-family: 'Noto-Sans';
+}
+
+.priority-radio {
+  cursor: pointer;
+  margin: 0;
+}
+
+#due-date {
+  margin-top: 5px;
+  padding: 5px;
+  font-family: 'Noto-Sans';
+  border-radius: 8px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 /*Sidebar Styles*/
