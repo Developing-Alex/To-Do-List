@@ -4,6 +4,33 @@ class Task {
     this.description = description;
     this.priority = priority;
     this.dueDate = dueDate;
+  };
+  set title(newTitle){
+    this.title = newTitle;
+  }
+  get title(){
+    return this.title;
+  }
+
+  set description(newDescription){
+    this.description = newDescription;
+  }
+  get description(){
+    return this.description
+  }
+
+  set priority(newPriority){
+    this.priority = newPriority;
+  }
+  get priority(){
+    return this.priority
+  }
+
+  set dueDate(newDueDate){
+    this.dueDate = newDueDate
+  }
+  get dueDate(){
+    return this.dueDate
   }
 }
 
@@ -13,11 +40,18 @@ function taskHandler(){
     allTasks.push(newTask)
     return newTask
   }
-  addTask(new Task('adaa','adawe','low','ooiooj'))
-  return {allTasks}
+  //const mytask = new Task('adaa','adawe','low','ooiooj');
+  //addTask(mytask);
+  return allTasks
 }
 
-console.log(taskHandler().title)
+function displayTasks(arr){
+  arr.forEach(task => {
+    
+  });
+}
+
+console.log(taskHandler())
 
 
 
