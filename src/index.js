@@ -59,12 +59,12 @@ const addTaskParagraph = document.querySelectorAll('.add-task-paragraph');
 function createFormContainer(taskContainer) {
   const formBox = document.createElement('form');
   formBox.name = `form-box`;
-  formBox.id = formBox.name;  
+  formBox.id = formBox.name;
   formBox.method = 'post';
   formBox.action = '';
 
   const formTitle = document.createElement('textarea');
-  formTitle.id= 'form-title';
+  formTitle.id = 'form-title';
   formTitle.name = formTitle.id;
   formTitle.cols = '30';
   formTitle.row = '1';
@@ -165,9 +165,7 @@ function createFormContainer(taskContainer) {
 
   taskContainer.appendChild(formBox);
 
-  submitTaskBtn.addEventListener('click', function(event){
-    event.preventDefault();
-
+  function fillTaskCard(){
     const taskTitle = formTitle.value;
     const taskDescription = formDescription.value;
     let taskPriority = document.querySelector('input[name="priority"]:checked').value
@@ -175,15 +173,23 @@ function createFormContainer(taskContainer) {
 
     submitTaskBtn.parentElement.style.display = 'none';
     addTaskParagraph.forEach(btn => btn.style.display = 'flex')
-    taskContainer.prepend(displayTasks(createTask(taskTitle, taskDescription,taskPriority,taskDueDate)));
+
+    taskContainer.prepend(displayTasks(createTask(taskTitle, taskDescription, taskPriority, taskDueDate)));
 
     console.log(taskPriority)
 
     formTitle.value = '';
     formDescription.value = '';
-    taskPriority.value = '';
+    var ele = document.getElementsByName("priority");
+    for (let i = 0; i < ele.length; i++)
+      ele[i].checked = false;
     dateInput.value = '';
-  })
+  }
+
+  submitTaskBtn.addEventListener('click', event => {
+    event.preventDefault();
+    fillTaskCard();
+  });
 
   return taskContainer;
 }
@@ -192,43 +198,83 @@ addTaskParagraph.forEach(btn => {
   btn.addEventListener('click', () => {
     if (btn.parentElement.id.charAt(btn.parentElement.id.length - 1) === btn.id.charAt(btn.id.length - 1))
       createFormContainer(btn.parentElement);
-      btn.style.display = 'none';
+    btn.style.display = 'none';
   })
 })
 
 
-function displayTasks(obj){
+function displayTasks(obj) {
 
   const taskCard = document.createElement('div');
   taskCard.id = `task-card`
   taskCard.className = 'task-cards';
 
+  const taskTitleContainer = document.createElement('div');
+  taskTitleContainer.className = 'task-title-containers';
+
+  const taskTitleHeading = document.createElement('h4');
+  taskTitleHeading.className = 'task-title-headings';
+
   const taskTitle = document.createElement('p');
-  taskTitle.id = `task-title`;
   taskTitle.className = 'task-titles';
-  
+
+  const taskTitleContainerArr = [taskTitleHeading, taskTitle];
+  taskTitleContainerArr.forEach(taskTitleEl => taskTitleContainer.appendChild(taskTitleEl));
+
+  const taskDescriptionContainer = document.createElement('div');
+  taskDescriptionContainer.className = 'task-description-containers';
+
+  const taskDescriptionHeading = document.createElement('h4');
+  taskDescriptionHeading.className = 'task-description-headings';
+
   const taskDescription = document.createElement('p');
-  taskDescription.id = `task-description`;
   taskDescription.className = 'task-descriptions';
 
+  const taskDescriptionContainerArr = [taskDescriptionHeading, taskDescription];
+  taskDescriptionContainerArr.forEach(taskDescriptionEl => taskDescriptionContainer.appendChild(taskDescriptionEl));
+
+  const taskPriorityContainer = document.createElement('div');
+  taskPriorityContainer.className = 'task-priority-containers';
+
+  const taskPriorityHeading = document.createElement('h4');
+  taskPriorityHeading.className = 'task-priority-headings';
+
   const taskPriority = document.createElement('p');
-  taskPriority.id = `task-priority`;
   taskPriority.className = 'task-priorities';
 
+  const taskPriorityContainerArr = [taskPriorityHeading, taskPriority];
+  taskPriorityContainerArr.forEach(taskPriorityEl => taskPriorityContainer.appendChild(taskPriorityEl));
+
+  const taskDueDateContainer = document.createElement('div');
+  taskDueDateContainer.className = 'task-due-date-containers';
+
+  const taskDueDateHeading = document.createElement('h4');
+  taskDueDateHeading.className = 'task-due-date-headings';
+
   const taskDueDate = document.createElement('p');
-  taskDueDate.id = `task-due-date`;
   taskDueDate.className = 'task-due-dates';
 
-  const taskCardArr = [taskTitle, taskDescription, taskPriority, taskDueDate];
+  const taskDueDateContainerArr = [taskDueDateHeading, taskDueDate];
+  taskDueDateContainerArr.forEach(taskDueDateEl => taskDueDateContainer.appendChild(taskDueDateEl));
+
+  const taskCardArr = [taskTitleContainer, taskDescriptionContainer, taskPriorityContainer, taskDueDateContainer];
   taskCardArr.forEach(taskCardEl => {
     taskCard.appendChild(taskCardEl);
   });
 
-  taskTitle.textContent = `Task: ${obj.title}`;
-  taskDescription.textContent = `Details: ${obj.description}`;
-  taskPriority.textContent = `Priority: ${obj.priority}`;
-  taskDueDate.textContent = `Due date: ${obj.dueDate}`;
+  taskTitleHeading.textContent = `Task:`;
+  taskTitle.textContent = obj.title;
 
- return taskCard
+  taskDescriptionHeading.textContent = `Details:`;
+  taskDescription.textContent = obj.description;
+
+  taskPriorityHeading.textContent = `Priority:`;
+  taskPriority.textContent = obj.priority;
+
+  taskDueDateHeading.textContent = `Due date:`;
+  taskDueDate.textContent = obj.dueDate;
+
+
+  return taskCard
 };
 
