@@ -192,7 +192,7 @@ header {
   cursor: pointer;
 }
 
-#due-date-btn {
+.form-btn {
   margin-top: 5px;
   padding: 5px;
   font-family: 'Noto-Sans';
@@ -201,7 +201,7 @@ header {
   cursor: pointer;
 }
 
-#due-date-btn:hover {
+.form-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transition: .7s;
   color: black;
