@@ -1,57 +1,31 @@
-class Task {
-  constructor(title, description, priority, dueDate) {
-    this.title = title;
-    this.description = description;
-    this.priority = priority;
-    this.dueDate = dueDate;
+export default function createTask (title, description, priority, dueDate) {
+    return {
+      title, 
+      description, 
+      priority, 
+      dueDate
+    }
   };
-  set title(newTitle){
-    this.title = newTitle;
-  }
-  get title(){
-    return this.title;
-  }
 
-  set description(newDescription){
-    this.description = newDescription;
-  }
-  get description(){
-    return this.description
-  }
-
-  set priority(newPriority){
-    this.priority = newPriority;
-  }
-  get priority(){
-    return this.priority
-  }
-
-  set dueDate(newDueDate){
-    this.dueDate = newDueDate
-  }
-  get dueDate(){
-    return this.dueDate
-  }
-}
-
-function taskHandler(){
+export function taskHandler(){
   const allTasks = [];
+
+  const getAllTasks = () => allTasks;
+
   function addTask(newTask){
-    allTasks.push(newTask)
+    getAllTasks().push(newTask)
+    console.log(getAllTasks());
+    console.log(newTask)
+    console.log(getAllTasks().indexOf(newTask))
     return newTask
   }
-  //const mytask = new Task('adaa','adawe','low','ooiooj');
-  //addTask(mytask);
-  return allTasks
+  
+  return {
+    addTask,
+    getAllTasks
+  }
 }
 
-function displayTasks(arr){
-  arr.forEach(task => {
-    
-  });
-}
-
-console.log(taskHandler())
 
 
 
