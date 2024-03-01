@@ -71,6 +71,55 @@ header {
   justify-self: center;
 }
 
+/*Sidebar Styles*/
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  min-width: 250px;
+  max-width: 250px;
+  background-color: whitesmoke;
+}
+
+#time-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 10px 0px 10px;
+}
+
+.time-btn{
+  cursor: pointer;
+  border: none;
+  border-radius: 0px;
+  color: rgba(0, 0, 0, 0.75);
+  background-color: whitesmoke;
+  font-family: 'Noto-Sans';
+  font-size: 1.2rem;
+  display: flex;
+  gap: 8px;
+  text-align: left;
+  align-items: center;
+  padding: 10px 0px 10px 40px;
+}
+
+.time-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: black;
+}
+
+.time-icons {
+  width: 1.2rem;
+  filter: invert(25%);
+}
+
 /*Content Container Styles*/
 
 #content-container {
@@ -207,51 +256,30 @@ header {
   color: black;
 }
 
-/*Sidebar Styles*/
+/*Task Card Styles*/
 
-#sidebar {
+.task-cards {
   display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-  min-width: 250px;
-  max-width: 250px;
-  background-color: whitesmoke;
-}
-
-#time-container {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
-  padding: 0px 10px 0px 10px;
-}
-
-.time-btn{
-  cursor: pointer;
-  border: none;
-  border-radius: 0px;
-  color: rgba(0, 0, 0, 0.75);
   background-color: whitesmoke;
-  font-family: 'Noto-Sans';
-  font-size: 1.2rem;
+  border: thin black solid;
+  padding: 5px;
+}
+
+.task-cards div {
   display: flex;
-  gap: 8px;
-  text-align: left;
   align-items: center;
-  padding: 10px 0px 10px 40px;
+  gap: 8px;
 }
 
-.time-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: black;
+.task-cards p {
+  font-family: 'Noto-sans';
+  margin: 0;
 }
 
-.active {
-  background-color: rgba(0, 0, 0, 0.1);
+.task-cards h4 {
+  font-family: 'Noto-sans';
   font-weight: bold;
-  color: black;
+  margin: 0;
 }
 
-.time-icons {
-  width: 1.2rem;
-  filter: invert(25%);
-}
