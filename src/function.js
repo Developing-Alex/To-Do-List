@@ -1,3 +1,5 @@
+import { displayTasks } from "./index";
+
 export default function createTask (title, description, priority, dueDate) {
     return {
       title, 
