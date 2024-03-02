@@ -78,7 +78,7 @@ function createFormContainer(taskContainer) {
 
   const cancelButton = new Image();
   cancelButton.src = CancelButton;
-  cancelButton.id = 'cancel-btn';
+  cancelButton.id = 'form-cancel-btn';
 
   const formTitleContainerArr = [formTitle, cancelButton];
   formTitleContainerArr.forEach(el => formTitleContainer.appendChild(el))
@@ -223,7 +223,7 @@ addTaskParagraph.forEach(btn => {
 })
 
 
-function displayTasks(obj) {
+export function displayTasks(obj) {
 
   const taskCard = document.createElement('div');
   taskCard.id = `task-card`
