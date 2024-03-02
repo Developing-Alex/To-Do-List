@@ -125,16 +125,13 @@ header {
 #content-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
 }
 
 #content {
   width: 100vw;
+  height: 100vh;
   display: flex;
-  background-image: url('./assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgba(120, 129, 35, 0.12);
   padding: 50px;
 }
 
@@ -159,7 +156,7 @@ header {
 
 .task-headers {
   margin: 0;
-  padding: 10px 0 10px 0;
+  padding: 5px;
   font-family: 'Noto-Sans';
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.8);
@@ -179,12 +176,17 @@ header {
   font-size: 1.3rem;
   margin: 0;
   font-family: 'Noto-Sans';
-  filter: invert(30%);
+  color: rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+  width: 500px;
 }
 
 .add-task-paragraph:hover {
-  filter: invert(0%);
+  color: black;
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .add-task-paragraph:active {
@@ -200,6 +202,7 @@ header {
 #form-box {
   display: flex;
   flex-direction: column;
+  max-width: min-content;
   background-color: whitesmoke;
   border: 1px solid black;
   border-radius: 10px;
@@ -207,11 +210,22 @@ header {
   gap: 5px;
 }
 
+#form-title-container {
+  display: flex;
+  align-items: flex-start;
+}
+
 #form-title {
   border: none;
   outline: none;
   resize: none;
   background-color: whitesmoke;
+}
+
+#cancel-btn {
+  width: 1.3rem;
+  transform: rotate(45deg);
+  cursor: pointer;
 }
 
 #form-description {
@@ -261,6 +275,7 @@ header {
 .task-cards {
   display: flex;
   gap: 10px;
+  max-width: max-content;
   background-color: whitesmoke;
   border: thin black solid;
   padding: 5px;
