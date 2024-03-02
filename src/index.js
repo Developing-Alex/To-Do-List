@@ -1,6 +1,7 @@
 import './style.css';
 import createTask from './function';
 import { taskHandler } from './function';
+import CancelButton from './assets/images/plus-circle-outline.svg';
 
 const allBtn = document.getElementById('all-btn');
 const dailyBtn = document.getElementById('day-btn');
@@ -63,6 +64,9 @@ function createFormContainer(taskContainer) {
   formBox.method = 'post';
   formBox.action = '';
 
+  const formTitleContainer = document.createElement('div');
+  formTitleContainer.id = 'form-title-container'
+
   const formTitle = document.createElement('textarea');
   formTitle.id = 'form-title';
   formTitle.name = formTitle.id;
@@ -71,6 +75,13 @@ function createFormContainer(taskContainer) {
   formTitle.placeholder = 'Title';
   formTitle.required = true;
   formTitle.value = '';
+
+  const cancelButton = new Image();
+  cancelButton.src = CancelButton;
+  cancelButton.id = 'cancel-btn';
+
+  const formTitleContainerArr = [formTitle, cancelButton];
+  formTitleContainerArr.forEach(el => formTitleContainer.appendChild(el))
 
   const formDescription = document.createElement('textarea');
   formDescription.id = 'form-description';
@@ -160,24 +171,12 @@ function createFormContainer(taskContainer) {
   submitTaskBtn.className = 'form-btn';
   submitTaskBtn.type = 'submit';
 
-  const formBoxArr = [formTitle, formDescription, priorityHeader, priorityContainer, dueDateBtn, submitTaskBtn];
+  const formBoxArr = [formTitleContainer, formDescription, priorityHeader, priorityContainer, dueDateBtn, submitTaskBtn];
   formBoxArr.forEach(e => formBox.appendChild(e));
 
   taskContainer.appendChild(formBox);
 
-  function fillTaskCard(){
-    const taskTitle = formTitle.value;
-    const taskDescription = formDescription.value;
-    let taskPriority = document.querySelector('input[name="priority"]:checked').value
-    const taskDueDate = dateInput.value;
-
-    submitTaskBtn.parentElement.style.display = 'none';
-    addTaskParagraph.forEach(btn => btn.style.display = 'flex')
-
-    taskContainer.prepend(displayTasks(createTask(taskTitle, taskDescription, taskPriority, taskDueDate)));
-
-    console.log(taskPriority)
-
+  function clearFormBox() {
     formTitle.value = '';
     formDescription.value = '';
     var ele = document.getElementsByName("priority");
@@ -185,6 +184,27 @@ function createFormContainer(taskContainer) {
       ele[i].checked = false;
     dateInput.value = '';
   }
+
+  function fillTaskCard() {
+    const taskTitle = formTitle.value;
+    const taskDescription = formDescription.value;
+    let taskPriority = document.querySelector('input[name="priority"]:checked').value
+    const taskDueDate = dateInput.value;
+
+    formBox.style.display = 'none';
+    addTaskParagraph.forEach(btn => btn.style.display = 'flex')
+
+    taskContainer.prepend(displayTasks(createTask(taskTitle, taskDescription, taskPriority, taskDueDate)));
+
+    console.log(taskPriority)
+    clearFormBox();
+  }
+
+  cancelButton.addEventListener('click', () => {
+    clearFormBox();
+    formBox.style.display = 'none';
+    addTaskParagraph.forEach(btn => btn.style.display = 'flex')
+  })
 
   submitTaskBtn.addEventListener('click', event => {
     event.preventDefault();
