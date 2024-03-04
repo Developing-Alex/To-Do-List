@@ -194,7 +194,7 @@ function createFormContainer(taskContainer) {
     formBox.style.display = 'none';
     addTaskParagraph.forEach(btn => btn.style.display = 'flex')
 
-    taskContainer.prepend(displayTasks(createTask(taskTitle, taskDescription, taskPriority, taskDueDate)));
+    taskContainer.appendChild(displayTasks(createTask(taskTitle, taskDescription, taskPriority, taskDueDate)));
 
     console.log(taskPriority)
     clearFormBox();
@@ -216,17 +216,19 @@ function createFormContainer(taskContainer) {
 
 addTaskParagraph.forEach(btn => {
   btn.addEventListener('click', () => {
-    if (btn.parentElement.id.charAt(btn.parentElement.id.length - 1) === btn.id.charAt(btn.id.length - 1))
-      createFormContainer(btn.parentElement);
+    if (btn.previousElementSibling.id.charAt(btn.previousElementSibling.id.length - 1) === btn.id.charAt(btn.id.length - 1))
+      createFormContainer(btn.previousElementSibling);
     btn.style.display = 'none';
   })
 })
 
-
+let idNumCreator = 0;
 export function displayTasks(obj) {
+  
+  idNumCreator++
 
   const taskCard = document.createElement('div');
-  taskCard.id = `task-card`
+  taskCard.id = `task-card-${idNumCreator}`
   taskCard.className = 'task-cards';
 
   const taskTitleContainer = document.createElement('div');
@@ -297,4 +299,5 @@ export function displayTasks(obj) {
 
   return taskCard
 };
+
 
